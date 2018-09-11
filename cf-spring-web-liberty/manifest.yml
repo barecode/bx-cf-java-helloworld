@@ -1,0 +1,12 @@
+---
+applications:
+- instances: 1
+  timeout: 180
+  name: cfspringwebliberty
+  buildpack: https://github.com/barecode/ibm-websphere-liberty-buildpack
+  path: ./target/cfspringwebliberty-1.0-SNAPSHOT.jar
+  memory: 512M
+  env:
+    WLP_JAR_EXTRACT_ROOT: /tmp
+    IBM_JVM_LICENSE: L-SMKR-AVSEUH
+    IBM_LIBERTY_LICENSE: L-CTUR-AYBK6Z
