@@ -4,6 +4,11 @@ A collection of simple Java projects (JEE and Spring) for pushing to Bluemix Clo
 
 Push these to learn about Cloud Foundary and build packs.
 
+## Deployed Apps
+- [cf-jee-web](http://cfjeeweb.mybluemix.net/cfjeeweb/)
+- [cf-spring-web](http://cfspringweb.mybluemix.net/)
+- cf-spring-web-liberty -- not working right now :(
+
 ## How to deploy:
 - Run `bx cf login` - provide your Bluemix login
 - Run `bx cf push` - the deploy uses manifest.yml
