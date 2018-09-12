@@ -3,15 +3,22 @@ IBM Cloud Basic Web Starter for Spring
 
 ## Customizations for Liberty + Spring Boot uber jar
 
-~~ THIS IS NOT CURRENTLY WORKING! :( ~~
+**THIS IS NOT CURRENTLY WORKING! :(**
 
-The manifest.yml has a few key settings:
+This is being experimented with buildpacks `liberty-for-java` and https://github.com/cloudfoundry/ibm-websphere-liberty-buildpack 
+
+The manifest.yml has a few specific settings:
 * buildpack: https://github.com/barecode/ibm-websphere-liberty-buildpack
 * env: WLP_JAR_EXTRACT_ROOT: /tmp
 
-The custom buildpack is used for testing purposes, but it could work with liberty-for-java.
+My custom buildpack is used for testing purposes, but any changes will be merged into mainline `liberty-for-java`.
 
-The home directory for the buildpack is not writable. Instead of `/home/vcap/wlpExtract` we set `WLP_JAR_EXTRACT_ROOT=/tmp`. See [runnable jar variables](https://www.ibm.com/support/knowledgecenter/en/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/rwlp_setup_jarserver.html)
+Current problems:
+- The home directory for the buildpack is not writable. Instead of `/home/vcap/wlpExtract` we set `WLP_JAR_EXTRACT_ROOT=/tmp`. See [runnable jar variables](https://www.ibm.com/support/knowledgecenter/en/SSEQTP_liberty/com.ibm.websphere.wlp.doc/ae/rwlp_setup_jarserver.html)
+
+Relevant documentation:
+- https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#env-block
+- https://docs.cloudfoundry.org/devguide/deploy-apps/environment-variable.html#TMPDIR
 
 
 [![](https://img.shields.io/badge/IBM%20Cloud-powered-blue.svg)](https://bluemix.net)
